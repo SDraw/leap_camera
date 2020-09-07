@@ -4,6 +4,7 @@ Simple application for displaying images from Leap Motion controller.
 * Connect Leap Motion controller.
 * Be sure that `LeapService` service is running.
 * Launch application binary.
+* Press `K` to switch camera. By default left camera is displayed.
 
 # Building
 * Open `leap_camera.sln` solution in Visual Studio 2013.
