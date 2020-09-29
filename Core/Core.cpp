@@ -3,8 +3,6 @@
 
 SFML_DEFINE_DISCRETE_GPU_PREFERENCE
 
-const sf::Vector2f g_spriteScale(1.f, 2.f);
-
 Core::Core()
 {
     m_valid = false;
@@ -18,6 +16,7 @@ Core::Core()
 
     m_leapController = nullptr;
 }
+
 Core::~Core()
 {
 }
@@ -37,7 +36,7 @@ bool Core::Initialize()
         {
             m_texture = new sf::Texture();
             m_sprite = new sf::Sprite();
-            m_sprite->setScale(g_spriteScale);
+            m_sprite->setScale(1.f, 2.f);
 
             m_leapController = new Leap::Controller();
             m_leapController->setPolicy(Leap::Controller::PolicyFlag::POLICY_IMAGES);
@@ -104,7 +103,6 @@ bool Core::DoPulse()
 
                     if((l_imageWidth > 0U) && (l_imageHeight > 0U))
                     {
-
                         // First init
                         if(m_texture->getNativeHandle() == 0)
                         {
